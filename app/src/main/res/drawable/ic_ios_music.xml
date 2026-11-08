@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Vivid Apple Music Red/Pink Gradient Background -->
+    <path
+        android:pathData="M0,0h192v192h-192z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="96"
+                android:startY="0"
+                android:endX="96"
+                android:endY="192">
+                <item android:offset="0.0" android:color="#FFFA2D55" />
+                <item android:offset="1.0" android:color="#FFEA1040" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- White Double-Beamed Musical Eighth Notes -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M136,46 L86,58 C83.8,58.5 82,60.5 82,62.8 L82,118.5 C78.8,116.3 74.6,115 70,115 C59.0,115 50,123.1 50,133 C50,142.9 59.0,151 70,151 C81.0,151 90,142.9 90,133 L90,83 L128,74 L128,110.5 C124.8,108.3 120.6,107 116,107 C105.0,107 96,115.1 96,125 C96,134.9 105.0,143 116,143 C127.0,143 136,134.9 136,125 L136,48 C136,46.9 135.1,46 134,46 Z M90,74 L90,67.5 L128,58.5 L128,65 Z" />
+</vector>

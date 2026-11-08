@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Vibrant Apple Green Phone Receiver -->
+    <path
+        android:fillColor="#FF34C759"
+        android:pathData="M60.5,53.2 C54.3,56.8 50.1,63.2 49.3,70.5 C47.2,89.8 62.5,114.2 82.2,132.8 C100.8,150.3 123.6,161.7 141.2,157.9 C148.1,156.4 153.8,151.4 156.7,144.9 C159.2,139.3 158.1,133.2 153.3,128.8 L137.2,114.1 C132.8,110.1 126.1,109.9 121.5,113.6 L113.8,119.8 C112.5,120.8 110.8,121.1 109.2,120.4 C101.4,116.8 91.1,107.4 85.5,99.3 C84.4,97.7 84.4,95.8 85.3,94.3 L90.8,85.7 C94.1,80.6 93.3,73.8 88.9,69.7 L73.4,55.3 C69.9,52.0 64.9,50.7 60.5,53.2 Z" />
+</vector>

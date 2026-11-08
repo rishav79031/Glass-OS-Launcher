@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Deep indigo to violet to cyan, with two soft glows, like light behind frosted glass. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="108"
+                android:endY="108"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear">
+                <item android:color="#FF1A1464" android:offset="0" />
+                <item android:color="#FF5E5CE6" android:offset="0.5" />
+                <item android:color="#FF2FC6F5" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="30"
+                android:centerY="24"
+                android:gradientRadius="46"
+                android:type="radial">
+                <item android:color="#66FF6FD8" android:offset="0" />
+                <item android:color="#00FF6FD8" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="84"
+                android:centerY="88"
+                android:gradientRadius="44"
+                android:type="radial">
+                <item android:color="#7744E0FF" android:offset="0" />
+                <item android:color="#0044E0FF" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

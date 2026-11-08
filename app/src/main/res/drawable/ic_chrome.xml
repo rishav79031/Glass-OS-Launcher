@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Chrome circular white canvas -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M96,16 A80,80 0 1,0 96.01,16 Z" />
+    <group
+        android:scaleX="6.4"
+        android:scaleY="6.4"
+        android:translateX="19.2"
+        android:translateY="19.2">
+        <!-- Top / Red Segment -->
+        <path
+            android:fillColor="#FFEA4335"
+            android:pathData="M12,0 C8.21,0 4.831,1.757 2.632,4.501 l3.953,6.848 A5.454,5.454 0 0,1 12,6.545 h10.691 A12,12 0 0,0 12,0 Z" />
+        <!-- Bottom-Left / Yellow Segment -->
+        <path
+            android:fillColor="#FFFBBC04"
+            android:pathData="M1.931,5.47 A11.943,11.943 0 0,0 0,12 c0,6.012 4.42,10.991 10.189,11.864 l3.953,-6.847 A5.45,5.45 0 0,1 7.277,14.727 Z" />
+        <!-- Bottom-Right / Green Segment -->
+        <path
+            android:fillColor="#FF34A853"
+            android:pathData="M15.273,7.636 A5.446,5.446 0 0,1 16.723,14.726 l-5.344,9.257 c0.206,0.01 0.413,0.016 0.621,0.016 c6.627,0 12,-5.373 12,-12 c0,-1.54 -0.29,-3.011 -0.818,-4.364 Z" />
+        <!-- White Ring around Center -->
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M12,6.545 A5.455,5.455 0 1,0 12.01,6.545 Z" />
+        <!-- Blue Center Circle -->
+        <path
+            android:fillColor="#FF4285F4"
+            android:pathData="M12,7.636 A4.364,4.364 0 1,0 12.01,7.636 Z" />
+    </group>
+</vector>

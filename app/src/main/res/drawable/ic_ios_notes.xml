@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Clean Notepad White Background -->
+    <path
+        android:fillColor="#FFFDFDFE"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Top Warm Amber Header Strip -->
+    <path
+        android:fillColor="#FFFFD60A"
+        android:pathData="M0,0h192v58h-192z" />
+    <!-- Horizontal Ruled Paper Lines -->
+    <path
+        android:strokeColor="#1F000000"
+        android:strokeWidth="1.5"
+        android:pathData="M32,84 h128 M32,108 h128 M32,132 h128 M32,156 h128" />
+    <!-- Yellow Pencil Icon in Foreground -->
+    <path
+        android:fillColor="#FFFF9F0A"
+        android:pathData="M130,48 L144,62 L82,124 L68,124 L68,110 Z" />
+    <path
+        android:fillColor="#FF2C2C2E"
+        android:pathData="M68,124 L66,130 L72,128 Z" />
+</vector>

@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Top Warm Amber Header Strip -->
+    <path
+        android:fillColor="#FFFFD60A"
+        android:pathData="M0,0h192v58h-192z" />
+    <!-- Ruled Lines in Dim White -->
+    <path
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M32,84 h128 M32,108 h128 M32,132 h128 M32,156 h128" />
+    <!-- Yellow Pencil Icon -->
+    <path
+        android:fillColor="#FFFFD60A"
+        android:pathData="M136,88 L148,100 L96,152 L84,152 L84,140 Z" />
+</vector>

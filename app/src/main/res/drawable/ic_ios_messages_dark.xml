@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Vibrant Apple Green Speech Bubble -->
+    <path
+        android:fillColor="#FF34C759"
+        android:pathData="M96,44 C65.6,44 41,65.5 41,92 C41,107.1 48.7,120.4 60.8,129 C62.3,130.1 63.2,131.7 62.8,133.5 C61.1,141.2 57.2,148.6 52.3,153.8 C51.1,155.1 52.1,157.1 53.8,156.9 C65.9,155.4 77.2,148.8 84.1,142.3 C85.4,141.1 87.2,140.6 88.9,141 C91.2,141.6 93.6,142 96,142 C126.4,142 151,120.5 151,94 C151,67.5 126.4,44 96,44 Z" />
+</vector>

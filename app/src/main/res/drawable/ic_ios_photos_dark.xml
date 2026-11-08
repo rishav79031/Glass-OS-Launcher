@@ -1,0 +1,91 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Deep Onyx Black Squircle Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+
+    <!-- 8 Multi-colored iOS Photos Petals rotated around (96, 96) -->
+    <!-- Top: Yellow (0 deg) -->
+    <group
+        android:pivotX="96"
+        android:pivotY="96"
+        android:rotation="0">
+        <path
+            android:fillColor="#E6FFD60A"
+            android:pathData="M96,44 C90.5,44 86,48.5 86,54 L86,84 C86,89.5 90.5,94 96,94 C101.5,94 106,89.5 106,84 L106,54 C106,48.5 101.5,44 96,44 Z" />
+    </group>
+
+    <!-- Top-Right: Orange (45 deg) -->
+    <group
+        android:pivotX="96"
+        android:pivotY="96"
+        android:rotation="45">
+        <path
+            android:fillColor="#E6FF9F0A"
+            android:pathData="M96,44 C90.5,44 86,48.5 86,54 L86,84 C86,89.5 90.5,94 96,94 C101.5,94 106,89.5 106,84 L106,54 C106,48.5 101.5,44 96,44 Z" />
+    </group>
+
+    <!-- Right: Red (90 deg) -->
+    <group
+        android:pivotX="96"
+        android:pivotY="96"
+        android:rotation="90">
+        <path
+            android:fillColor="#E6FF453A"
+            android:pathData="M96,44 C90.5,44 86,48.5 86,54 L86,84 C86,89.5 90.5,94 96,94 C101.5,94 106,89.5 106,84 L106,54 C106,48.5 101.5,44 96,44 Z" />
+    </group>
+
+    <!-- Bottom-Right: Magenta/Pink (135 deg) -->
+    <group
+        android:pivotX="96"
+        android:pivotY="96"
+        android:rotation="135">
+        <path
+            android:fillColor="#E6FF375F"
+            android:pathData="M96,44 C90.5,44 86,48.5 86,54 L86,84 C86,89.5 90.5,94 96,94 C101.5,94 106,89.5 106,84 L106,54 C106,48.5 101.5,44 96,44 Z" />
+    </group>
+
+    <!-- Bottom: Purple (180 deg) -->
+    <group
+        android:pivotX="96"
+        android:pivotY="96"
+        android:rotation="180">
+        <path
+            android:fillColor="#E6BF5AF2"
+            android:pathData="M96,44 C90.5,44 86,48.5 86,54 L86,84 C86,89.5 90.5,94 96,94 C101.5,94 106,89.5 106,84 L106,54 C106,48.5 101.5,44 96,44 Z" />
+    </group>
+
+    <!-- Bottom-Left: Blue (225 deg) -->
+    <group
+        android:pivotX="96"
+        android:pivotY="96"
+        android:rotation="225">
+        <path
+            android:fillColor="#E60A84FF"
+            android:pathData="M96,44 C90.5,44 86,48.5 86,54 L86,84 C86,89.5 90.5,94 96,94 C101.5,94 106,89.5 106,84 L106,54 C106,48.5 101.5,44 96,44 Z" />
+    </group>
+
+    <!-- Left: Teal / Cyan (270 deg) -->
+    <group
+        android:pivotX="96"
+        android:pivotY="96"
+        android:rotation="270">
+        <path
+            android:fillColor="#E664D2FF"
+            android:pathData="M96,44 C90.5,44 86,48.5 86,54 L86,84 C86,89.5 90.5,94 96,94 C101.5,94 106,89.5 106,84 L106,54 C106,48.5 101.5,44 96,44 Z" />
+    </group>
+
+    <!-- Top-Left: Green (315 deg) -->
+    <group
+        android:pivotX="96"
+        android:pivotY="96"
+        android:rotation="315">
+        <path
+            android:fillColor="#E630D158"
+            android:pathData="M96,44 C90.5,44 86,48.5 86,54 L86,84 C86,89.5 90.5,94 96,94 C101.5,94 106,89.5 106,84 L106,54 C106,48.5 101.5,44 96,44 Z" />
+    </group>
+</vector>

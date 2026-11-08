@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A frosted glass pane with a bright rim, holding a 2x2 grid of glass tiles; all inside the safe zone (21..87). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- The pane: milky glass, brighter at the top. -->
+    <path android:pathData="M43,28h22a15,15 0 0 1 15,15v22a15,15 0 0 1 -15,15h-22a15,15 0 0 1 -15,-15v-22a15,15 0 0 1 15,-15z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="54"
+                android:endY="80"
+                android:startX="54"
+                android:startY="28"
+                android:type="linear">
+                <item android:color="#59FFFFFF" android:offset="0" />
+                <item android:color="#1FFFFFFF" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Rim: light catching the top-left and bottom-right edges. -->
+    <path
+        android:pathData="M43,28.75h22a14.25,14.25 0 0 1 14.25,14.25v22a14.25,14.25 0 0 1 -14.25,14.25h-22a14.25,14.25 0 0 1 -14.25,-14.25v-22a14.25,14.25 0 0 1 14.25,-14.25z"
+        android:strokeWidth="1.5">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:endX="80"
+                android:endY="80"
+                android:startX="28"
+                android:startY="28"
+                android:type="linear">
+                <item android:color="#F2FFFFFF" android:offset="0" />
+                <item android:color="#26FFFFFF" android:offset="0.5" />
+                <item android:color="#99FFFFFF" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Tiles. -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M40,35h6a5,5 0 0 1 5,5v6a5,5 0 0 1 -5,5h-6a5,5 0 0 1 -5,-5v-6a5,5 0 0 1 5,-5z" />
+    <path
+        android:fillAlpha="0.82"
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M62,35h6a5,5 0 0 1 5,5v6a5,5 0 0 1 -5,5h-6a5,5 0 0 1 -5,-5v-6a5,5 0 0 1 5,-5z" />
+    <path
+        android:fillAlpha="0.82"
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M40,57h6a5,5 0 0 1 5,5v6a5,5 0 0 1 -5,5h-6a5,5 0 0 1 -5,-5v-6a5,5 0 0 1 5,-5z" />
+    <path
+        android:fillAlpha="0.6"
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M62,57h6a5,5 0 0 1 5,5v6a5,5 0 0 1 -5,5h-6a5,5 0 0 1 -5,-5v-6a5,5 0 0 1 5,-5z" />
+    <!-- A soft specular streak across the top of the pane. -->
+    <path android:pathData="M36,33c6,-3 16,-4 26,-3c-9,1 -17,3 -24,7z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="62"
+                android:endY="30"
+                android:startX="36"
+                android:startY="33"
+                android:type="linear">
+                <item android:color="#CCFFFFFF" android:offset="0" />
+                <item android:color="#00FFFFFF" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

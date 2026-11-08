@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panel_guard_label">Glass Launcher top-edge swipe</string>
+    <string name="panel_guard_description">Lets a swipe from the very top of the Home Screen open Glass Control Centre and Notification Centre instead of the phone\'s own panel. It works on the Home Screen and in other apps (with Display over other apps), and pulling down twice opens the phone\'s own panel. It only watches for the system panel opening and doesn\'t read anything on your screen.</string>
+</resources>

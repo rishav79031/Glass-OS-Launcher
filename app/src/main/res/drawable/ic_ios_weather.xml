@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Sunny Blue Gradient Sky Background -->
+    <path
+        android:pathData="M0,0h192v192h-192z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="96"
+                android:startY="0"
+                android:endX="96"
+                android:endY="192">
+                <item android:offset="0.0" android:color="#FF38A9F8" />
+                <item android:offset="1.0" android:color="#FF007AFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Vibrant Yellow Sun -->
+    <path
+        android:fillColor="#FFFFCC00"
+        android:pathData="M80,80 m-30,0 a30,30 0 1,0 60,0 a30,30 0 1,0 -60,0" />
+    <!-- Fluffy White Cloud -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M110,88 C107.5,88 105,88.8 103,90.2 C99.2,78.2 88,69.5 74.5,69.5 C58.2,69.5 45,82.7 45,99 C45,99.8 45.1,100.5 45.1,101.3 C37.6,103.8 32,110.8 32,119.2 C32,129.8 40.6,138.5 51.2,138.5 L124.5,138.5 C136.4,138.5 146,128.9 146,117 C146,105.7 137.3,96.5 126.3,95.6 C124.8,91.2 118,88 110,88 Z" />
+</vector>

@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Golden Sun -->
+    <path
+        android:fillColor="#FFFFD60A"
+        android:pathData="M80,88 m-26,0 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0" />
+    <!-- Soft Cloud -->
+    <path
+        android:fillColor="#FF8E8E93"
+        android:pathData="M68,136 h68 c13.2,0 24,-10.8 24,-24 c0,-11.8 -8.6,-21.6 -20,-23.6 c-2.4,-15.8 -16,-28.4 -32,-28.4 c-14.8,0 -27.6,10.6 -30.8,25.2 c-2.4,-0.8 -5,-1.2 -7.6,-1.2 c-13.2,0 -24,10.8 -24,24 c0,13.2 10.8,24 24,24 z" />
+</vector>

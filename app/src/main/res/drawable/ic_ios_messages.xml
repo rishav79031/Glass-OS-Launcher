@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Emerald green gradient background -->
+    <path
+        android:pathData="M0,0h192v192h-192z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="20"
+                android:startY="20"
+                android:endX="172"
+                android:endY="172">
+                <item android:offset="0.0" android:color="#FF5BE66B" />
+                <item android:offset="0.5" android:color="#FF34C759" />
+                <item android:offset="1.0" android:color="#FF249E37" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Crisp Apple Messages Speech Bubble -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M96,44 C65.6,44 41,65.5 41,92 C41,107.1 48.7,120.4 60.8,129 C62.3,130.1 63.2,131.7 62.8,133.5 C61.1,141.2 57.2,148.6 52.3,153.8 C51.1,155.1 52.1,157.1 53.8,156.9 C65.9,155.4 77.2,148.8 84.1,142.3 C85.4,141.1 87.2,140.6 88.9,141 C91.2,141.6 93.6,142 96,142 C126.4,142 151,120.5 151,94 C151,67.5 126.4,44 96,44 Z" />
+</vector>

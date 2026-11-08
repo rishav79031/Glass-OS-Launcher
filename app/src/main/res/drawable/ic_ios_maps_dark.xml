@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Night Map Canvas Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Dark Ocean Coastline -->
+    <path
+        android:fillColor="#FF14385A"
+        android:pathData="M0,192 L75,192 C85,160 115,148 145,152 C168,155 185,142 192,130 L192,192 Z" />
+    <!-- Dark Park Area -->
+    <path
+        android:fillColor="#FF1E4028"
+        android:pathData="M0,0 L125,0 C120,40 100,75 65,95 C45,106 20,110 0,115 Z" />
+    <!-- Route Line Orange -->
+    <path
+        android:strokeColor="#FFFF9F0A"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M30,160 C60,130 90,110 130,80 L160,50" />
+    <!-- Location Pin Pinhead -->
+    <path
+        android:fillColor="#FFFF3B30"
+        android:pathData="M130,80 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M130,80 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+</vector>

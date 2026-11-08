@@ -1,0 +1,68 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Authentic Vivid Apple App Store Blue Gradient Background -->
+    <path
+        android:pathData="M0,0h192v192h-192z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="96"
+                android:startY="0"
+                android:endX="96"
+                android:endY="192">
+                <item android:offset="0.0" android:color="#FF2496F8" />
+                <item android:offset="1.0" android:color="#FF0866DF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 1. Left diagonal rod (under horizontal bar) -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="18"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M96,38 L46,146" />
+
+    <!-- 2. Horizontal bar (passes over left diagonal) with subtle shadow cutout mask -->
+    <path
+        android:strokeColor="#20000000"
+        android:strokeWidth="24"
+        android:strokeLineCap="round"
+        android:pathData="M38,116 L154,116" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="18"
+        android:strokeLineCap="round"
+        android:pathData="M38,116 L154,116" />
+
+    <!-- 3. Right diagonal rod (passes over horizontal bar) with subtle shadow cutout mask -->
+    <path
+        android:strokeColor="#20000000"
+        android:strokeWidth="24"
+        android:strokeLineCap="round"
+        android:pathData="M96,38 L146,146" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="18"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M96,38 L146,146" />
+
+    <!-- 4. Left diagonal apex (passes over right diagonal at top) -->
+    <path
+        android:strokeColor="#20000000"
+        android:strokeWidth="24"
+        android:strokeLineCap="round"
+        android:pathData="M96,38 L83,67" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="18"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M96,38 L83,67" />
+</vector>

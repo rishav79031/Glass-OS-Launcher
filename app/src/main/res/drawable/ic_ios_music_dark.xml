@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Apple Music Vibrant Pink/Red Double Eighth Note -->
+    <path
+        android:fillColor="#FFFA2D55"
+        android:pathData="M142,42 L88,54 C85.8,54.5 84,56.5 84,59 L84,124 C80.8,122.5 76.8,122 72,122 C59.8,122 50,129.2 50,138 C50,146.8 59.8,154 72,154 C84.2,154 94,146.8 94,138 L94,84 L136,75 L136,116 C132.8,114.5 128.8,114 124,114 C111.8,114 102,121.2 102,130 C102,138.8 111.8,146 124,146 C136.2,146 146,138.8 146,130 L146,46 C146,43.6 144.2,41.6 142,42 Z" />
+</vector>

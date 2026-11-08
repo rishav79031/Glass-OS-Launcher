@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Outer Gear Wheel Metallic Silver -->
+    <path
+        android:fillColor="#FF8E8E93"
+        android:pathData="M96,36 L104,36 L106,47 C109.5,48.2 112.8,49.8 115.8,51.8 L125.5,46.8 L131.2,52.5 L126.2,62.2 C128.2,65.2 129.8,68.5 131,72 L142,74 L142,82 L131,84 C129.8,87.5 128.2,90.8 126.2,93.8 L131.2,103.5 L125.5,109.2 L115.8,104.2 C112.8,106.2 109.5,107.8 106,109 L104,120 L96,120 L94,109 C90.5,107.8 87.2,106.2 84.2,104.2 L74.5,109.2 L68.8,103.5 L73.8,93.8 C71.8,90.8 70.2,87.5 69,84 L58,82 L58,74 L69,72 C70.2,68.5 71.8,65.2 73.8,62.2 L68.8,52.5 L74.5,46.8 L84.2,51.8 C87.2,49.8 90.5,48.2 94,47 Z" />
+    <!-- Center Cutout Hole showing Dark background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M96,78 m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0" />
+</vector>

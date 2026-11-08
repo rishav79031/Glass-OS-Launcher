@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Glass OS Launcher</string>
+    <string name="panel_guard_label">Glass Panel Guard</string>
+</resources>

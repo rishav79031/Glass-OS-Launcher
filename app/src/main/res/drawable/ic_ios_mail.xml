@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Vivid Sky-to-Deep Cyan Gradient Background -->
+    <path
+        android:pathData="M0,0h192v192h-192z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="96"
+                android:startY="0"
+                android:endX="96"
+                android:endY="192">
+                <item android:offset="0.0" android:color="#FF47B5FF" />
+                <item android:offset="1.0" android:color="#FF0072E5" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Crisp White Envelope Body -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M44,66 C44,59.4 49.4,54 56,54 L136,54 C142.6,54 148,59.4 148,66 L148,126 C148,132.6 142.6,138 136,138 L56,138 C49.4,138 44,132.6 44,126 Z" />
+    <!-- Envelope Fold Creases -->
+    <path
+        android:strokeColor="#FF0072E5"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M46,60 L96,102 L146,60" />
+    <path
+        android:strokeColor="#330072E5"
+        android:strokeWidth="2"
+        android:pathData="M46,134 L82,94 M146,134 L110,94" />
+</vector>

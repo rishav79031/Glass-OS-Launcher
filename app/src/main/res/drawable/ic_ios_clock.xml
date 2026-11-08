@@ -1,0 +1,45 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Deep Onyx Black Dial Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Clock Dial Face with Subtle Rim -->
+    <path
+        android:strokeColor="#33FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M96,96 m-58,0 a58,58 0 1,0 116,0 a58,58 0 1,0 -116,0" />
+    <!-- 12, 3, 6, 9 Hour Ticks -->
+    <path android:fillColor="#FFFFFFFF" android:pathData="M95,42 h2 v8 h-2 z" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M142,95 h8 v2 h-8 z" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M95,142 h2 v8 h-2 z" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M42,95 h8 v2 h-8 z" />
+    <!-- Hour Hand (pointing at 10) -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:pathData="M96,96 L76,73" />
+    <!-- Minute Hand (pointing at 2) -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M96,96 L124,63" />
+    <!-- Orange-Red Second Hand -->
+    <path
+        android:strokeColor="#FFFF453A"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M96,112 L96,52" />
+    <!-- Center Pivot Pin -->
+    <path
+        android:fillColor="#FFFF453A"
+        android:pathData="M96,96 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0" />
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M96,96 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0" />
+</vector>

@@ -1,0 +1,42 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Deep Charcoal Gray Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- 4 Characteristic Calculator Circles Grid -->
+    <!-- Top-Left Dark Gray Button -->
+    <path
+        android:fillColor="#FF505054"
+        android:pathData="M70,70 m-22,0 a22,22 0 1,0 44,0 a22,22 0 1,0 -44,0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M68,59 h4 v22 h-4 z M59,68 h22 v4 h-22 z" />
+    <!-- Top-Right Apple Orange Button -->
+    <path
+        android:fillColor="#FFFF9F0A"
+        android:pathData="M122,70 m-22,0 a22,22 0 1,0 44,0 a22,22 0 1,0 -44,0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M111,68 h22 v4 h-22 z" />
+    <!-- Bottom-Left Dark Gray Button -->
+    <path
+        android:fillColor="#FF505054"
+        android:pathData="M70,122 m-22,0 a22,22 0 1,0 44,0 a22,22 0 1,0 -44,0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M63,115 l14,14 m0,-14 l-14,14"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round" />
+    <!-- Bottom-Right Apple Orange Button -->
+    <path
+        android:fillColor="#FFFF9F0A"
+        android:pathData="M122,122 m-22,0 a22,22 0 1,0 44,0 a22,22 0 1,0 -44,0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M112,117 h20 v3.5 h-20 z M112,125 h20 v3.5 h-20 z" />
+</vector>

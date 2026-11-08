@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Rear Folder Back Tab -->
+    <path
+        android:fillColor="#FF147EFB"
+        android:pathData="M44,68 C44,61.4 49.4,56 56,56 L82,56 C85.6,56 89,57.7 91.1,60.6 L96,67 L136,67 C142.6,67 148,72.4 148,79 L148,130 C148,136.6 142.6,142 136,142 L56,142 C49.4,142 44,136.6 44,130 Z" />
+    <!-- Front Folder Body -->
+    <path
+        android:fillColor="#FF0A84FF"
+        android:pathData="M44,80 C44,74.5 48.5,70 54,70 L138,70 C143.5,70 148,74.5 148,80 L148,132 C148,138.6 142.6,144 136,144 L56,144 C49.4,144 44,138.6 44,132 Z" />
+</vector>

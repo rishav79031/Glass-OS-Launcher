@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Sleek Dark Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- 3 Characteristic Apple Fitness Rings -->
+    <!-- Outer Move Ring (Red / Magenta) -->
+    <path
+        android:strokeColor="#FFFA114F"
+        android:strokeWidth="11"
+        android:strokeLineCap="round"
+        android:pathData="M96,96 m-52,0 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0" />
+    <!-- Middle Exercise Ring (Electric Green) -->
+    <path
+        android:strokeColor="#FF92E82A"
+        android:strokeWidth="11"
+        android:strokeLineCap="round"
+        android:pathData="M96,96 m-37,0 a37,37 0 1,0 74,0 a37,37 0 1,0 -74,0" />
+    <!-- Inner Stand Ring (Cyan) -->
+    <path
+        android:strokeColor="#FF1EEAEF"
+        android:strokeWidth="11"
+        android:strokeLineCap="round"
+        android:pathData="M96,96 m-22,0 a22,22 0 1,0 44,0 a22,22 0 1,0 -44,0" />
+</vector>

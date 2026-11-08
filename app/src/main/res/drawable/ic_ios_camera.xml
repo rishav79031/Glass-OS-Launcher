@@ -1,0 +1,89 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Light Satin Titanium Metallic Background -->
+    <path
+        android:pathData="M0,0h192v192h-192z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="96"
+                android:startY="0"
+                android:endX="96"
+                android:endY="192">
+                <item android:offset="0.0" android:color="#FFF4F4F5" />
+                <item android:offset="0.5" android:color="#FFE4E4E7" />
+                <item android:offset="1.0" android:color="#FFD4D4D8" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Camera Chassis with Top Grip and Viewfinder Notch -->
+    <path
+        android:fillColor="#FF27272A"
+        android:pathData="M48,70 C48,63 53,58 60,58 L72,58 L78,51 C80,48.5 83,47 86,47 L106,47 C109,47 112,48.5 114,51 L120,58 L132,58 C139,58 144,63 144,70 L144,130 C144,137 139,142 132,142 L60,142 C53,142 48,137 48,130 Z" />
+
+    <!-- Shutter Button Accent on Left Top -->
+    <path
+        android:fillColor="#FF71717A"
+        android:pathData="M58,54 L70,54 C70,54 70,58 70,58 L58,58 Z" />
+
+    <!-- Amber Sensor / Flash Ring -->
+    <path
+        android:pathData="M130,70m-5,0a5,5 0 1,0 10,0a5,5 0 1,0 -10,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="130"
+                android:centerY="70"
+                android:gradientRadius="5">
+                <item android:offset="0.0" android:color="#FFFFE082" />
+                <item android:offset="0.7" android:color="#FFFFB300" />
+                <item android:offset="1.0" android:color="#FFF57C00" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Outer Chrome Stepped Lens Bezel -->
+    <path
+        android:pathData="M96,100m-34,0a34,34 0 1,0 68,0a34,34 0 1,0 -68,0"
+        android:strokeWidth="2.5"
+        android:strokeColor="#FFD4D4D8"
+        android:fillColor="#FF3F3F46" />
+
+    <!-- Middle Lens Stepping Ring -->
+    <path
+        android:fillColor="#FF18181B"
+        android:pathData="M96,100m-29,0a29,29 0 1,0 58,0a29,29 0 1,0 -58,0" />
+
+    <!-- Optical Element Multi-Coated Deep Glass Pupil -->
+    <path
+        android:pathData="M96,100m-22,0a22,22 0 1,0 44,0a22,22 0 1,0 -44,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="80"
+                android:startY="84"
+                android:endX="112"
+                android:endY="116">
+                <item android:offset="0.0" android:color="#FF2563EB" />
+                <item android:offset="0.3" android:color="#FF1D4ED8" />
+                <item android:offset="0.7" android:color="#FF1E1B4B" />
+                <item android:offset="1.0" android:color="#FF09090B" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Optical Lens Specular Reflection Arc -->
+    <path
+        android:fillColor="#4D67E8F9"
+        android:pathData="M83,93 C85,86 91,82 98,82 C101,82 103,83 105,84 C100,85 93,89 90,95 C88,99 88,103 89,107 C85,103 83,98 83,93 Z" />
+
+    <!-- Cyan Focal Glint Dot -->
+    <path
+        android:fillColor="#80A5F3FC"
+        android:pathData="M106,110m-3,0a3,3 0 1,0 6,0a3,3 0 1,0 -6,0" />
+</vector>

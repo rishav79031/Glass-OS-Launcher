@@ -1,0 +1,75 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Map Canvas Background (Apple Maps 2025 Warm Neutral) -->
+    <path
+        android:fillColor="#FFF7F5EE"
+        android:pathData="M0,0h192v192h-192z" />
+
+    <!-- Apple Maps 2025 Waterway / Ocean Bay (Vibrant Coastline) -->
+    <path
+        android:fillColor="#FF57B2F8"
+        android:pathData="M0,192 L75,192 C85,160 115,148 145,152 C168,155 185,142 192,130 L192,192 Z" />
+    <path
+        android:fillColor="#FF3994EB"
+        android:pathData="M0,192 L60,192 C75,170 105,158 135,162 C160,165 180,154 192,145 L192,192 Z" />
+
+    <!-- Apple Maps 2025 Park / Green Landscape -->
+    <path
+        android:fillColor="#FF77D97B"
+        android:pathData="M0,0 L125,0 C120,40 100,75 65,95 C45,106 20,110 0,115 Z" />
+    <path
+        android:fillColor="#FF5CCB63"
+        android:pathData="M140,0 L192,0 L192,65 C175,60 160,45 152,25 Z" />
+
+    <!-- Road Base Shadow -->
+    <path
+        android:strokeColor="#18000000"
+        android:strokeWidth="18"
+        android:strokeLineCap="round"
+        android:pathData="M-5,145 C60,135 110,105 135,55 C145,35 150,5 150,-5" />
+    <!-- Main Highway (White Overpass) -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:pathData="M-5,145 C60,135 110,105 135,55 C145,35 150,5 150,-5" />
+    <!-- Highway Yellow Route Indicator (Apple Maps 2025 Style) -->
+    <path
+        android:strokeColor="#FFFFB800"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M-5,145 C60,135 110,105 135,55 C145,35 150,5 150,-5" />
+
+    <!-- Secondary Intersecting Avenue -->
+    <path
+        android:strokeColor="#15000000"
+        android:strokeWidth="14"
+        android:strokeLineCap="square"
+        android:pathData="M115,-5 L65,197" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="12"
+        android:strokeLineCap="square"
+        android:pathData="M115,-5 L65,197" />
+
+    <!-- Pin Shadow on the Road -->
+    <path
+        android:fillColor="#33000000"
+        android:pathData="M110,122 C110,118 126,118 126,122 C126,126 110,126 110,122 Z" />
+
+    <!-- Apple Maps 2025 Red Navigation Teardrop Pin -->
+    <path
+        android:fillColor="#FFFF3B30"
+        android:pathData="M98,90 C98,77.85 107.85,68 120,68 C132.15,68 142,77.85 142,90 C142,106 120,122 120,122 C120,122 98,106 98,90 Z" />
+    <!-- Pin Specular Highlight -->
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M103,84 C107,76 115,73 121,73 C127,73 133,76 137,84 C132,77 124,75 120,75 C114,75 107,78 103,84 Z" />
+    <!-- Pin Center White Dot -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M120,90 m-6.5,0 a6.5,6.5 0 1,0 13,0 a6.5,6.5 0 1,0 -13,0" />
+</vector>

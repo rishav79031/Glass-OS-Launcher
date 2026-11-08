@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Camera Body Top Housing -->
+    <path
+        android:fillColor="#FF3A3A3C"
+        android:pathData="M76,46 L116,46 C119,46 122,48.5 123.5,52.5 L127,62 L65,62 L68.5,52.5 C70,48.5 73,46 76,46 Z" />
+    <!-- Camera Main Body -->
+    <path
+        android:fillColor="#FF3A3A3C"
+        android:pathData="M38,62 h116 c8.8,0 16,7.2 16,16 v60 c0,8.8 -7.2,16 -16,16 h-116 c-8.8,0 -16,-7.2 -16,-16 v-60 c0,-8.8 7.2,-16 16,-16 z" />
+    <!-- Lens Outer Ring -->
+    <path
+        android:fillColor="#FF2C2C2E"
+        android:pathData="M96,112 m-32,0 a32,32 0 1,0 64,0 a32,32 0 1,0 -64,0" />
+    <!-- Lens Inner Glass -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M96,112 m-24,0 a24,24 0 1,0 48,0 a24,24 0 1,0 -48,0" />
+    <path
+        android:fillColor="#33007AFF"
+        android:pathData="M96,112 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0" />
+    <!-- Specular Highlight Dot -->
+    <path
+        android:fillColor="#99FFFFFF"
+        android:pathData="M102,104 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+    <!-- Flash LED -->
+    <path
+        android:fillColor="#FFFFD60A"
+        android:pathData="M142,80 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+</vector>

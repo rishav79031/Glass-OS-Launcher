@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Dark Squircle Background -->
+    <path
+        android:fillColor="#FF1C1C1E"
+        android:pathData="M0,0h192v192h-192z" />
+    <!-- Address Book Right Tabs -->
+    <path android:fillColor="#FF3A3A3C" android:pathData="M164,48 h16 v22 h-16 z" />
+    <path android:fillColor="#FF48484A" android:pathData="M164,76 h16 v22 h-16 z" />
+    <path android:fillColor="#FF3A3A3C" android:pathData="M164,104 h16 v22 h-16 z" />
+    <path android:fillColor="#FF48484A" android:pathData="M164,132 h16 v22 h-16 z" />
+    <!-- White Profile Silhouette -->
+    <!-- Head -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M88,74 m-22,0 a22,22 0 1,0 44,0 a22,22 0 1,0 -44,0" />
+    <!-- Shoulders -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M48,144 C48,122 66,108 88,108 C110,108 128,122 128,144 Z" />
+</vector>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Google Play edition: 100% compliant with Google Play Developer Policies -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Strip restricted/privileged permissions not permitted on Google Play -->
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.BODY_SENSORS"
+        tools:node="remove" />
+    <application>
+        <!-- Launcher Notification Listener: explicitly exempt and allowed for HOME launchers on Google Play -->
+        <service
+            android:name=".data.NotificationBadgeService"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
