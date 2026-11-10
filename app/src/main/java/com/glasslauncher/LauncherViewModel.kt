@@ -335,9 +335,21 @@ class LauncherViewModel(application: Application) : AndroidViewModel(application
         settingsStore.update {
             val list = it.notesList.toMutableList()
             if (index in list.indices) {
-                if (clean.isBlank()) list.removeAt(index) else list[index] = clean
+                list.removeAt(index)
+                if (clean.isNotBlank()) list.add(0, clean) // Edited note moves to top as the latest!
             } else if (clean.isNotBlank()) {
                 list.add(0, clean)
+            }
+            val top = list.firstOrNull().orEmpty()
+            it.copy(noteText = top, notesList = list)
+        }
+    }
+
+    fun deleteNote(index: Int) {
+        settingsStore.update {
+            val list = it.notesList.toMutableList()
+            if (index in list.indices) {
+                list.removeAt(index)
             }
             val top = list.firstOrNull().orEmpty()
             it.copy(noteText = top, notesList = list)

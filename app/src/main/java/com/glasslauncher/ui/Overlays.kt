@@ -7,6 +7,8 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.res.painterResource
+import androidx.compose.material.icons.rounded.Delete
+import androidx.compose.material.icons.rounded.IosShare
 import androidx.compose.material.icons.rounded.EditNote
 import androidx.compose.material.icons.rounded.Public
 import androidx.compose.material.icons.rounded.Map
@@ -647,20 +649,39 @@ fun IosAlert(title: String, message: String?, buttons: List<AlertButton>, onDism
     }
 }
 
-/** Quick note editor window for the Notes widget and launcher, saved as you type to keep notes. */
+/** Quick note editor window for the Notes widget and launcher, with cursor at end of text and Keep integration. */
 @Composable
 fun NoteEditor(
     text: String,
     isNew: Boolean = false,
     onSave: (String) -> Unit,
+    onDelete: (() -> Unit)? = null,
     onDismiss: () -> Unit,
 ) {
-    var value by remember { mutableStateOf(if (isNew) "" else text) }
+    val context = LocalContext.current
+    var textFieldValue by remember {
+        val initialText = if (isNew) "" else text
+        mutableStateOf(
+            TextFieldValue(
+                text = initialText,
+                selection = TextRange(initialText.length) // Cursor automatically at the end of text!
+            )
+        )
+    }
     val focus = remember { FocusRequester() }
     val scrollState = rememberScrollState()
     LaunchedEffect(Unit) { focus.requestFocus() }
+
+    val handleDone = {
+        val clean = textFieldValue.text.trim()
+        if (clean.isNotBlank()) {
+            onSave(clean)
+        }
+        onDismiss()
+    }
+
     Box(Modifier.fillMaxSize().imePadding()) {
-        Scrim(onDismiss, alpha = 0.35f)
+        Scrim(onDismiss = handleDone, alpha = 0.35f)
         Column(
             Modifier
                 .align(Alignment.Center)
@@ -674,7 +695,7 @@ fun NoteEditor(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Box(
                     Modifier
-                        .size(30.dp)
+                        .size(32.dp)
                         .background(AccentYellow.copy(alpha = 0.22f), CircleShape),
                     contentAlignment = Alignment.Center
                 ) {
@@ -682,20 +703,69 @@ fun NoteEditor(
                         Icons.Rounded.EditNote,
                         contentDescription = null,
                         tint = AccentYellow,
-                        modifier = Modifier.size(19.dp)
+                        modifier = Modifier.size(20.dp)
                     )
                 }
                 Spacer(Modifier.width(10.dp))
                 Column(Modifier.weight(1f)) {
                     Text(if (isNew) "New Note" else "Edit Note", style = PanelTitleStyle.copy(fontSize = 18.sp))
-                    Text(if (isNew) "Will be saved to keep notes" else "Saved on device to keep notes", style = PanelCaptionStyle.copy(fontSize = 10.5.sp, color = Color.White.copy(alpha = 0.6f)))
+                    Text(
+                        "Saved on device • Tap share for Keep",
+                        style = PanelCaptionStyle.copy(fontSize = 10.5.sp, color = Color.White.copy(alpha = 0.6f))
+                    )
                 }
+
+                // Delete button (when editing existing note)
+                if (!isNew && onDelete != null) {
+                    Box(
+                        Modifier
+                            .size(30.dp)
+                            .clip(CircleShape)
+                            .background(Color(0xFFFF3B30).copy(alpha = 0.22f))
+                            .clickable {
+                                onDelete()
+                                onDismiss()
+                            },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            Icons.Rounded.Delete,
+                            contentDescription = "Delete",
+                            tint = Color(0xFFFF453A),
+                            modifier = Modifier.size(17.dp)
+                        )
+                    }
+                    Spacer(Modifier.width(8.dp))
+                }
+
+                // Share / Send to Keep button
+                Box(
+                    Modifier
+                        .size(30.dp)
+                        .clip(CircleShape)
+                        .background(Color.White.copy(alpha = 0.14f))
+                        .clickable {
+                            val content = textFieldValue.text.ifBlank { text }
+                            openKeepNotes(context, content)
+                        },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        Icons.Rounded.IosShare,
+                        contentDescription = "Send to Keep",
+                        tint = Color.White,
+                        modifier = Modifier.size(17.dp)
+                    )
+                }
+                Spacer(Modifier.width(8.dp))
+
+                // Done button
                 Box(
                     Modifier
                         .clip(Capsule)
                         .background(AccentYellow)
-                        .clickable(onClick = onDismiss)
-                        .padding(horizontal = 14.dp, vertical = 5.dp),
+                        .clickable(onClick = handleDone)
+                        .padding(horizontal = 14.dp, vertical = 6.dp),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
@@ -704,28 +774,25 @@ fun NoteEditor(
                     )
                 }
             }
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(12.dp))
             Box(
                 Modifier
                     .fillMaxWidth()
-                    .heightIn(min = 110.dp, max = 190.dp)
+                    .heightIn(min = 120.dp, max = 220.dp)
                     .clip(RoundedCornerShape(14.dp))
                     .background(Color.White.copy(alpha = 0.08f))
                     .verticalScroll(scrollState)
                     .padding(12.dp)
             ) {
-                if (value.isEmpty()) {
+                if (textFieldValue.text.isEmpty()) {
                     Text(
-                        if (isNew) "Type a new note here to keep..." else "Type your note here... Saved automatically.",
+                        if (isNew) "Type your note here..." else "Type your note here...",
                         style = PanelBodyStyle.copy(color = Color.White.copy(alpha = 0.4f), fontSize = 14.5.sp),
                     )
                 }
                 BasicTextField(
-                    value = value,
-                    onValueChange = {
-                        value = it
-                        onSave(it)
-                    },
+                    value = textFieldValue,
+                    onValueChange = { textFieldValue = it },
                     textStyle = PanelBodyStyle.copy(fontSize = 14.5.sp),
                     cursorBrush = SolidColor(AccentYellow),
                     modifier = Modifier.fillMaxWidth().focusRequester(focus),

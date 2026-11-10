@@ -338,6 +338,7 @@ fun LauncherRoot(vm: LauncherViewModel, events: LauncherEvents) {
             isNewNoteMode = true
             editingNote = true
         },
+        onDeleteNote = vm::deleteNote,
         reminders = settings.reminders,
         onAddReminder = {
             editingReminderIndex = null
@@ -791,6 +792,9 @@ fun LauncherRoot(vm: LauncherViewModel, events: LauncherEvents) {
                                     vm.editNote(idx, text)
                                 }
                             },
+                            onDelete = if (!isNewNoteMode && editingNoteIndex != null) {
+                                { editingNoteIndex?.let { vm.deleteNote(it) } }
+                            } else null,
                             onDismiss = {
                                 editingNote = false
                                 editingNoteIndex = null

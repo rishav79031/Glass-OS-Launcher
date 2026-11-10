@@ -38,6 +38,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material.icons.rounded.Description
 import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material3.Icon
 import androidx.compose.material.icons.rounded.SkipNext
@@ -156,20 +157,22 @@ fun MonthWidget(modifier: Modifier) {
 }
 
 /**
- * iOS Notes widget. Tap anywhere to open the built-in note window to save and keep notes.
+ * iOS Notes widget. Shows recent notes in a scrollable list like Reminders, with Google Keep integration.
  */
 @Composable
 fun NotesWidget(modifier: Modifier) {
     val env = LocalWidgetEnvironment.current
+    val context = LocalContext.current
     val notes = env.notesList.filter { it.isNotBlank() }.ifEmpty {
         if (env.note.isNotBlank()) listOf(env.note) else emptyList()
     }
-    val note1 = notes.getOrNull(0)
-    val note2 = notes.getOrNull(1)
+    val listState = rememberLazyListState()
 
-    WidgetSurface(modifier) {
+    WidgetSurface(modifier, onClick = {
+        if (notes.isEmpty()) env.onNewNote() else env.onEditNoteIndex(0)
+    }) {
         Column(Modifier.fillMaxSize()) {
-            // Header row with title and prominent yellow write icon
+            // Header row with title, note count, Keep icon, and prominent yellow write icon
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
@@ -179,11 +182,38 @@ fun NotesWidget(modifier: Modifier) {
                 Text(
                     "Notes",
                     style = PanelBodyStyle.copy(fontSize = 15.sp, fontWeight = FontWeight.Bold, color = AccentYellow),
-                    modifier = Modifier.weight(1f)
                 )
+                if (notes.isNotEmpty()) {
+                    Text(
+                        " (${notes.size})",
+                        style = PanelCaptionStyle.copy(fontSize = 12.sp, color = AccentYellow.copy(alpha = 0.7f)),
+                        modifier = Modifier.padding(start = 2.dp)
+                    )
+                }
+                Spacer(Modifier.weight(1f))
+
+                // Open in Google Keep button
                 Box(
                     Modifier
-                        .size(32.dp)
+                        .size(28.dp)
+                        .clip(CircleShape)
+                        .background(Color.White.copy(alpha = 0.12f))
+                        .clickable { openKeepNotes(context) },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        Icons.Rounded.Description,
+                        contentDescription = "Google Keep",
+                        tint = Color.White.copy(alpha = 0.85f),
+                        modifier = Modifier.size(15.dp),
+                    )
+                }
+                Spacer(Modifier.width(6.dp))
+
+                // New note button
+                Box(
+                    Modifier
+                        .size(28.dp)
                         .clip(CircleShape)
                         .background(AccentYellow.copy(alpha = 0.22f))
                         .clickable(onClick = env.onNewNote),
@@ -193,60 +223,91 @@ fun NotesWidget(modifier: Modifier) {
                         Icons.Rounded.Edit,
                         contentDescription = "New note",
                         tint = AccentYellow,
-                        modifier = Modifier.size(19.dp),
+                        modifier = Modifier.size(16.dp),
                     )
                 }
             }
 
-            // Two rows of recent notes divided with a horizontal line
-            Column(Modifier.fillMaxSize().weight(1f, fill = false), verticalArrangement = Arrangement.SpaceEvenly) {
-                // First Note Row
+            if (notes.isEmpty()) {
                 Box(
-                    Modifier
-                        .fillMaxWidth()
-                        .weight(1f)
-                        .clip(RoundedCornerShape(6.dp))
-                        .clickable { if (note1 != null) env.onEditNoteIndex(0) else env.onNewNote() }
-                        .padding(vertical = 4.dp, horizontal = 2.dp),
-                    contentAlignment = Alignment.CenterStart
+                    Modifier.fillMaxSize().clickable(onClick = env.onNewNote),
+                    contentAlignment = Alignment.Center
                 ) {
-                    Text(
-                        note1 ?: "Tap to create a note...",
-                        style = PanelBodyStyle.copy(
-                            fontSize = 13.sp,
-                            color = if (note1 == null) Color.White.copy(alpha = 0.5f) else Color.White
-                        ),
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis
-                    )
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("No Notes", style = PanelCaptionStyle.copy(fontSize = 13.sp))
+                        Text("Tap + to create a note", style = PanelCaptionStyle.copy(fontSize = 11.5.sp, color = Color.White.copy(alpha = 0.5f)))
+                    }
                 }
+            } else {
+                Box(Modifier.weight(1f).fillMaxWidth()) {
+                    LazyColumn(
+                        state = listState,
+                        modifier = Modifier.fillMaxSize().padding(end = if (notes.size > 2) 6.dp else 0.dp),
+                        verticalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        itemsIndexed(notes, key = { idx, item -> "$idx-$item" }) { index, noteText ->
+                            val lines = noteText.lines()
+                            val title = lines.firstOrNull() ?: noteText
+                            val subtitle = lines.drop(1).firstOrNull { it.isNotBlank() }
 
-                // Horizontal dividing line
-                androidx.compose.material3.HorizontalDivider(
-                    color = Color.White.copy(alpha = 0.15f),
-                    thickness = 0.8.dp,
-                    modifier = Modifier.padding(vertical = 2.dp)
-                )
+                            Column(
+                                Modifier
+                                    .fillMaxWidth()
+                                    .clip(RoundedCornerShape(6.dp))
+                                    .clickable { env.onEditNoteIndex(index) }
+                                    .padding(vertical = 3.dp, horizontal = 2.dp)
+                            ) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Box(
+                                        Modifier
+                                            .size(width = 3.dp, height = 14.dp)
+                                            .clip(Capsule)
+                                            .background(AccentYellow)
+                                    )
+                                    Spacer(Modifier.width(6.dp))
+                                    Text(
+                                        title,
+                                        style = PanelBodyStyle.copy(fontSize = 13.sp, fontWeight = FontWeight.SemiBold),
+                                        maxLines = 1,
+                                        overflow = TextOverflow.Ellipsis,
+                                        modifier = Modifier.weight(1f)
+                                    )
+                                }
+                                if (subtitle != null) {
+                                    Text(
+                                        subtitle,
+                                        style = PanelCaptionStyle.copy(fontSize = 11.sp, color = Color.White.copy(alpha = 0.6f)),
+                                        maxLines = 1,
+                                        overflow = TextOverflow.Ellipsis,
+                                        modifier = Modifier.padding(start = 9.dp, top = 1.dp)
+                                    )
+                                }
+                                if (index < notes.lastIndex) {
+                                    androidx.compose.material3.HorizontalDivider(
+                                        color = Color.White.copy(alpha = 0.1f),
+                                        thickness = 0.6.dp,
+                                        modifier = Modifier.padding(top = 4.dp, start = 9.dp)
+                                    )
+                                }
+                            }
+                        }
+                    }
 
-                // Second Note Row
-                Box(
-                    Modifier
-                        .fillMaxWidth()
-                        .weight(1f)
-                        .clip(RoundedCornerShape(6.dp))
-                        .clickable { if (note2 != null) env.onEditNoteIndex(1) else env.onNewNote() }
-                        .padding(vertical = 4.dp, horizontal = 2.dp),
-                    contentAlignment = Alignment.CenterStart
-                ) {
-                    Text(
-                        note2 ?: if (note1 != null) "+ Add another note..." else "",
-                        style = PanelBodyStyle.copy(
-                            fontSize = 13.sp,
-                            color = if (note2 == null) Color.White.copy(alpha = 0.4f) else Color.White
-                        ),
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis
-                    )
+                    if (notes.size > 2) {
+                        // iOS-style scrollbar indicator
+                        val firstVisible = listState.firstVisibleItemIndex
+                        val total = notes.size
+                        val progress = if (total > 0) (firstVisible.toFloat() / total).coerceIn(0f, 1f) else 0f
+                        Box(
+                            Modifier
+                                .align(Alignment.CenterEnd)
+                                .width(3.dp)
+                                .height(28.dp)
+                                .offset(y = ((progress - 0.5f) * 36f).dp)
+                                .clip(Capsule)
+                                .background(Color.White.copy(alpha = 0.45f))
+                        )
+                    }
                 }
             }
         }
@@ -353,6 +414,38 @@ fun RemindersWidget(modifier: Modifier) {
 }
 
 private const val KEEP_PACKAGE = "com.google.android.keep"
+
+/** Opens Google Keep or sends note text to Keep / sharing targets. */
+fun openKeepNotes(context: Context, noteText: String? = null) {
+    val pm = context.packageManager
+    if (!noteText.isNullOrBlank()) {
+        val sendIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, noteText)
+            `package` = KEEP_PACKAGE
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        if (context.startSafely(sendIntent)) return
+
+        val shareIntent = Intent.createChooser(Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, noteText)
+        }, "Send Note to...")
+        shareIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        if (context.startSafely(shareIntent)) return
+    }
+
+    val launchIntent = pm.getLaunchIntentForPackage(KEEP_PACKAGE)
+    if (launchIntent != null) {
+        context.startSafely(launchIntent)
+    } else {
+        val marketUri = android.net.Uri.parse("market://details?id=$KEEP_PACKAGE")
+        val webUri = android.net.Uri.parse("https://keep.google.com")
+        if (!context.startSafely(Intent(Intent.ACTION_VIEW, marketUri).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK })) {
+            context.startSafely(Intent(Intent.ACTION_VIEW, webUri).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK })
+        }
+    }
+}
 
 @Composable
 fun rememberStepCount(permissionTrigger: Int = 0): Int {

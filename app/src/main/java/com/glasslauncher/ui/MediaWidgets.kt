@@ -76,6 +76,7 @@ data class WidgetEnvironment(
     val onEditNote: () -> Unit = {},
     val onEditNoteIndex: (Int) -> Unit = {},
     val onNewNote: () -> Unit = {},
+    val onDeleteNote: (Int) -> Unit = {},
     val reminders: List<String> = emptyList(),
     val onAddReminder: () -> Unit = {},
     val onEditReminder: (Int) -> Unit = {},
