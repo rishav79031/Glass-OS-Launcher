@@ -23,8 +23,8 @@ android {
         minSdk = 31
         // Google Play requires new apps to target a recent Android release.
         targetSdk = 36
-        versionCode = 64
-        versionName = "1.64"
+        versionCode = 65
+        versionName = "1.65"
         resourceConfigurations += listOf("en", "hi", "es", "fr", "de", "pt", "ja", "ru", "ar", "zh")
     }
 

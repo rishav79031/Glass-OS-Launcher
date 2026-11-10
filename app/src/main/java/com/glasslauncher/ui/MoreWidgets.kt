@@ -168,9 +168,7 @@ fun NotesWidget(modifier: Modifier) {
     }
     val listState = rememberLazyListState()
 
-    WidgetSurface(modifier, onClick = {
-        if (notes.isEmpty()) env.onNewNote() else env.onEditNoteIndex(0)
-    }) {
+    WidgetSurface(modifier) {
         Column(Modifier.fillMaxSize()) {
             // Header row with title, note count, Keep icon, and prominent yellow write icon
             Row(

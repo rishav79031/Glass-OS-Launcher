@@ -659,7 +659,7 @@ fun NoteEditor(
     onDismiss: () -> Unit,
 ) {
     val context = LocalContext.current
-    var textFieldValue by remember {
+    var textFieldValue by remember(text, isNew) {
         val initialText = if (isNew) "" else text
         mutableStateOf(
             TextFieldValue(
@@ -670,7 +670,13 @@ fun NoteEditor(
     }
     val focus = remember { FocusRequester() }
     val scrollState = rememberScrollState()
-    LaunchedEffect(Unit) { focus.requestFocus() }
+    LaunchedEffect(text, isNew) {
+        focus.requestFocus()
+        kotlinx.coroutines.delay(60)
+        textFieldValue = textFieldValue.copy(
+            selection = TextRange(textFieldValue.text.length)
+        )
+    }
 
     val handleDone = {
         val clean = textFieldValue.text.trim()

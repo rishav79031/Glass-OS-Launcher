@@ -3,7 +3,7 @@
 ## Files to upload
 | What | File | Play Console section |
 |---|---|---|
-| App bundle | `Glass Launcher v1.64.aab` | Release > Production (or Closed testing) > Create release |
+| App bundle | `Glass Launcher v1.65.aab` | Release > Production (or Closed testing) > Create release |
 | App icon (512 × 512) | `icon_512.png` | Grow > Store listing > App icon |
 | Feature graphic (1024 × 500) | `graphics/feature_graphic_1024x500.png` | Store listing > Feature graphic |
 | Phone screenshots (7) | `screenshots/phone/01–07` (1080 × 2400) | Store listing > Phone screenshots |
@@ -12,6 +12,13 @@
 | Privacy policy | `privacy-policy.html` | Public URL link in App content > Privacy policy |
 
 ## Store listing text
+
+**What's new in v1.65**
+• Scrollable Notes Widget: Smoothly browse all your notes with a dedicated scrollable list, count badge, and individual note row taps.
+• Auto-Sorted Latest Notes: Notes are automatically sorted with the most recently added or modified notes right at the top.
+• Smart Note Editor Cursor: Tapping any note row places the cursor directly at the end of the text ready for immediate typing without jumping back to the beginning.
+• Quick Google Keep Integration: 1-tap Google Keep button in the widget header and dedicated "Share to Keep" button in the note editor to push any note to Google Keep.
+• Inline Note Deletion: Redesigned note editor toolbar with a direct delete button for quick clean up of notes.
 
 **What's new in v1.64**
 • Live Background Preview in Themes: Home screen wallpaper, widgets, and app icons remain completely visible, crisp, and un-dimmed while customising themes, updating live as you select Default, Dark, Clear, or Tinted.
